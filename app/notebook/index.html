@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Notebook</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+    <script type="text/javascript" defer src=js/model.js></script>
+    <script type="text/javascript" defer src=js/view.js></script>
+    <script type="text/javascript" defer src=js/controller.js></script>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="section">
+        <div class=container>
+            <div class="fixed-grid has-2-cols">
+                <div class="grid">
+
+                    <div class="field cell" id="fieldTitle">
+                        <label>Title</label>
+                        <div class="control">
+                            <input type="text" class="input" id="title" maxlength="20" required />
+                        </div>
+                        <p class="help is-warning is-hidden">This field is required</p>
+                    </div>
+
+                    <div class="field cell" id="fieldColor">
+                        <label>Color</label>
+                        <div class="control select is-fullwidth">
+                            <select id="color" onchange="noteColor()">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field cell is-col-span-2" id="fieldText">
+                        <label>Text</label>
+                        <div class="control">
+                            <textarea class="textarea is-fullwidth" id="text" maxlength="140" required></textarea>
+                        </div>
+                        <p class="help is-warning is-hidden">This field is required</p>
+                    </div>
+
+                </div>
+                <div class="cell is-col-span-2">
+                    <button onclick="addNote()" class="button is-primary is-fullwidth" id="addNote">Add</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="fixed-grid has-4-cols">
+                <div id="allNotes" class="grid"></div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</body>
+
+</html>
